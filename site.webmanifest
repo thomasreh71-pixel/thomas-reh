@@ -1,0 +1,17 @@
+{
+  "name": "Kreher Imperial 2.0",
+  "short_name": "Kreher Imperial",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#239B11",
+  "icons": [
+    {
+      "src": "/favicon.svg?v=4",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
