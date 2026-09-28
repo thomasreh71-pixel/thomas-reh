@@ -184,3 +184,28 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
     border:1px solid #239B11!important;
   }
 }
+
+/* Camper-Kachel: schwarzer Kastenwagen aus Van am See */
+.story-camper .story-image,
+.shot-main{
+  background-image:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.38)),url("https://i.ytimg.com/vi/i9wItnbXH6Y/maxresdefault.jpg")!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
+
+/* Desktop-Ueberschriften kompakter */
+@media(min-width:951px){
+  .intro h2,
+  .section-head h2,
+  .video-head h2,
+  .projects h2,
+  .closing h2{
+    font-size:clamp(1.75rem,2.35vw,2.65rem)!important;
+  }
+  .detail-copy h1{
+    font-size:clamp(2.05rem,3vw,3.15rem)!important;
+  }
+  .detail-section h2{
+    font-size:clamp(1.65rem,2.05vw,2.3rem)!important;
+  }
+}
