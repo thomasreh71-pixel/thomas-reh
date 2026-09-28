@@ -116,3 +116,17 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label{color:#c7ef82
 .video-card{display:block;text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .video-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.32)}
 .video-card .video-cta{display:block;margin-top:12px;color:#c7ef82;font-weight:850;font-size:.88rem}
+
+/* ORACAL 621 Economy Cal 064 Gelbgruen - offizieller sRGB-Naeherungswert */
+:root{
+  --forest:#239B11;
+  --forest2:#239B11;
+  --accent:#239B11;
+  --line:#239B11;
+}
+h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{color:#239B11!important}
+.btn-primary{background:#239B11!important;border-color:#239B11!important;color:#fff!important}
+.btn-secondary{border-color:#239B11!important}
+.hero-shot,.detail-image,.story-card,.media-card{border-color:#239B11!important}
+.hero-shot:hover,.story-card:hover,.media-card:hover{border-color:#239B11!important}
+.project{border-top-color:#239B11!important}
