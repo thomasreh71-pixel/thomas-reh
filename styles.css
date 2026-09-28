@@ -140,3 +140,23 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
 .detail-image-link .image-cta{position:absolute;right:18px;bottom:16px;background:rgba(0,0,0,.76);color:#239B11;padding:8px 12px;font-weight:850;font-size:.82rem;border:1px solid #239B11}
 .video-card{cursor:pointer}
 .media-card img{cursor:pointer}
+
+/* Lesbare Typografie auf gruener Kopf- und Fussleiste */
+.site-header .brand strong,
+.site-header .brand span,
+.site-header .mainnav a{
+  color:#ffffff!important;
+}
+.site-header .brand span{
+  opacity:.9;
+}
+.site-footer,
+.site-footer p,
+.site-footer a{
+  color:#ffffff!important;
+}
+.menu-toggle{
+  background:#0b0d0b!important;
+  color:#ffffff!important;
+  border-color:#ffffff!important;
+}
