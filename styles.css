@@ -209,3 +209,33 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
     font-size:clamp(1.65rem,2.05vw,2.3rem)!important;
   }
 }
+
+/* PC: deutlich kompaktere Ueberschriften */
+@media(min-width:951px){
+  .hero-copy h1{
+    font-size:clamp(2.35rem,3.1vw,3.15rem)!important;
+    line-height:1.03!important;
+  }
+  .intro h2,
+  .section-head h2,
+  .video-head h2,
+  .projects h2,
+  .closing h2{
+    font-size:clamp(1.55rem,1.95vw,2.15rem)!important;
+    line-height:1.1!important;
+  }
+  .detail-copy h1{
+    font-size:clamp(1.95rem,2.4vw,2.55rem)!important;
+  }
+  .detail-section h2{
+    font-size:clamp(1.45rem,1.75vw,1.9rem)!important;
+  }
+}
+
+/* Eigener schwarzer Kastenwagen fuer Camper-Kacheln */
+.story-camper .story-image,
+.shot-main{
+  background-image:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.35)),url("https://i.ytimg.com/vi/mb9O3aDmnzQ/maxresdefault.jpg")!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
