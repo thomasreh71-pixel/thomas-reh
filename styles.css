@@ -92,3 +92,27 @@ h1 span{color:#8fa674}
   .mainnav{background:#0d100d;border-color:#35422f}
   .hero-shot{border-width:1px}
 }
+
+/* Helles FaWoWa-Gruen + klickbare Video-Kacheln */
+:root{
+  --forest:#a8cf63;
+  --forest2:#b9dd78;
+  --accent:#c7ef82;
+  --line:#5c7349;
+}
+h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label{color:#c7ef82}
+.btn-primary{background:#a8cf63;border-color:#c7ef82;color:#0b0e09}
+.btn-secondary{border-color:#78965d;color:#eef5e9}
+.hero-shot{border-color:#91b56a}
+.hero-shot:hover{border-color:#c7ef82}
+.story-card,.media-card{border-color:#526746}
+.story-card:hover,.media-card:hover{border-color:#a8cf63}
+.project{border-top-color:#a8cf63}
+.detail-image{border-color:#91b56a}
+.shot-main{
+  background-image:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.34)),url("https://i.ytimg.com/vi/iU82MHcXYxg/sddefault.jpg") !important;
+  background-size:cover!important;background-position:center!important
+}
+.video-card{display:block;text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.video-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.32)}
+.video-card .video-cta{display:block;margin-top:12px;color:#c7ef82;font-weight:850;font-size:.88rem}
