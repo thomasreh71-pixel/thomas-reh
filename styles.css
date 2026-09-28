@@ -130,3 +130,13 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
 .hero-shot,.detail-image,.story-card,.media-card{border-color:#239B11!important}
 .hero-shot:hover,.story-card:hover,.media-card:hover{border-color:#239B11!important}
 .project{border-top-color:#239B11!important}
+
+/* 064 Gelbgruen auch fuer Kopf- und Fussleiste */
+.site-header{background:#239B11!important;border-bottom:1px solid #55c63c!important}
+.site-header .brand strong,.site-header .brand span,.site-header .mainnav a{color:#071006!important}
+.site-footer{background:#239B11!important;border-top:1px solid #55c63c!important;color:#071006!important}
+.menu-toggle{background:#071006!important;color:#239B11!important;border-color:#071006!important}
+.detail-image-link{position:relative;display:block;text-decoration:none;overflow:hidden}
+.detail-image-link .image-cta{position:absolute;right:18px;bottom:16px;background:rgba(0,0,0,.76);color:#239B11;padding:8px 12px;font-weight:850;font-size:.82rem;border:1px solid #239B11}
+.video-card{cursor:pointer}
+.media-card img{cursor:pointer}
