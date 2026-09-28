@@ -1,11 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <g fill="#239B11">
-    <path d="M10 18h30c6 0 10 4 12 10l3 10H11c-3 0-5-2-5-5V23c0-3 2-5 4-5z"/>
-    <rect x="15" y="23" width="12" height="8" rx="1.5" fill="#fff"/>
-    <rect x="31" y="23" width="10" height="8" rx="1.5" fill="#fff"/>
-    <path d="M6 38h49v5H6z"/>
-    <path d="M55 41h7v3h-7z"/>
-    <circle cx="20" cy="47" r="8"/>
-    <circle cx="20" cy="47" r="3.5" fill="#fff"/>
+    <!-- keilfoermiger FaWoWa-Koerper -->
+    <path d="M5 27 L18 18 Q23 15 32 15 L43 16 Q48 17 51 23 L56 35 L54 40 L12 40 Z"/>
+    <!-- Seitenfenster -->
+    <path d="M27 20 L40 20 Q43 20 45 24 L48 30 L28 30 Q25 30 25 27 L25 23 Q25 20 27 20 Z" fill="#0b0d0b"/>
+    <!-- Rad -->
+    <circle cx="22" cy="42" r="9"/>
+    <circle cx="22" cy="42" r="4" fill="#0b0d0b"/>
+    <!-- Deichsel -->
+    <path d="M53 37 L61 33 L63 36 L55 42 Z"/>
+    <circle cx="62" cy="34.5" r="2.5"/>
   </g>
 </svg>
