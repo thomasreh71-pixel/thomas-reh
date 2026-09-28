@@ -160,3 +160,27 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
   color:#ffffff!important;
   border-color:#ffffff!important;
 }
+
+/* Navigationsbereich vollständig im ORACAL-064-Gruen */
+.site-header .mainnav{
+  background:#239B11!important;
+  border:none!important;
+  box-shadow:none!important;
+}
+.site-header .mainnav a{
+  background:#239B11!important;
+  border:none!important;
+  box-shadow:none!important;
+  color:#ffffff!important;
+}
+.site-header .mainnav a:hover,
+.site-header .mainnav a:focus{
+  background:#239B11!important;
+  color:#ffffff!important;
+}
+@media(max-width:720px){
+  .site-header .mainnav{
+    background:#239B11!important;
+    border:1px solid #239B11!important;
+  }
+}
