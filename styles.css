@@ -250,3 +250,14 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
 .visited-countries ul{display:flex;flex-wrap:wrap;gap:9px;list-style:none;margin:0;padding:0}
 .visited-countries li{padding:7px 12px;border:1px solid #526746;background:#121612;color:var(--ink);font-size:.9rem}
 @media(max-width:600px){.visited-countries{padding:22px 18px;margin-top:30px}}
+
+/* Polarsteps in Kopf- und Fussleiste sichtbar halten. */
+body{padding-bottom:64px}
+.site-header .polarsteps-header{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;color:#fff;text-decoration:none;font-weight:750;font-size:.86rem;white-space:nowrap}
+.polarsteps-header img,.polarsteps-footer img,.prose .btn img{display:block;width:22px;height:22px;flex:none}
+.prose .btn{gap:9px}
+.site-footer{position:fixed;bottom:0;left:0;right:0;z-index:20;padding:12px 0!important}
+.site-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-footer .polarsteps-footer{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;text-decoration:none;font-size:.85rem;font-weight:750}
+.polarsteps-header:hover,.polarsteps-footer:hover{text-decoration:underline}
+@media(max-width:720px){.nav-wrap{gap:10px}.site-header .polarsteps-header{margin-left:auto}.site-header .polarsteps-header{font-size:0}.site-header .polarsteps-header img{width:26px;height:26px}.site-footer{padding:8px 0!important}.site-footer p{font-size:.7rem;line-height:1.35}.site-footer .polarsteps-footer{font-size:.75rem}body{padding-bottom:76px}}
