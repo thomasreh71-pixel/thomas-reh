@@ -17,11 +17,12 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
   };
   const headerWrap=document.querySelector('.site-header .nav-wrap');
   if(headerWrap){
-    headerWrap.append(makeLink('polarsteps-header','Polarsteps','Meine Reisen auf Polarsteps'));
+    const links=document.createElement('div');links.className='header-social-links';
+    links.append(makeLink('polarsteps-header','Polarsteps','Meine Reisen auf Polarsteps'));
     const whatsapp=document.createElement('a');whatsapp.className='whatsapp-header';
     whatsapp.href='https://wa.me/WhatsThomasRehApp';whatsapp.target='_blank';whatsapp.rel='noopener';
     whatsapp.textContent='WhatsApp';whatsapp.setAttribute('aria-label','Thomas über WhatsApp kontaktieren');
-    headerWrap.append(whatsapp);
+    links.append(whatsapp);headerWrap.append(links);
   }
   const footerWrap=document.querySelector('.site-footer .wrap');
   if(footerWrap){
