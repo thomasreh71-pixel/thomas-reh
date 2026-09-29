@@ -242,3 +242,11 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
 
 /* Schreibweise FaWoWa in Bildbeschriftungen erhalten. */
 .keep-case{text-transform:none!important}
+
+/* Über mich: bereiste Länder kompakt und gut lesbar. */
+.visited-countries{margin-top:42px;padding:28px 32px;border:1px solid var(--line);background:rgba(0,0,0,.12)}
+.visited-countries h3{margin:0 0 8px;font-size:1.25rem}
+.visited-countries p{margin:0 0 20px;color:var(--muted)}
+.visited-countries ul{display:flex;flex-wrap:wrap;gap:9px;list-style:none;margin:0;padding:0}
+.visited-countries li{padding:7px 12px;border:1px solid #526746;background:#121612;color:var(--ink);font-size:.9rem}
+@media(max-width:600px){.visited-countries{padding:22px 18px;margin-top:30px}}
