@@ -261,3 +261,10 @@ body{padding-bottom:64px}
 .site-footer .polarsteps-footer{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;text-decoration:none;font-size:.85rem;font-weight:750}
 .polarsteps-header:hover,.polarsteps-footer:hover{text-decoration:underline}
 @media(max-width:720px){.nav-wrap{gap:10px}.site-header .polarsteps-header{margin-left:auto}.site-header .polarsteps-header{font-size:0}.site-header .polarsteps-header img{width:26px;height:26px}.site-footer{padding:8px 0!important}.site-footer p{font-size:.7rem;line-height:1.35}.site-footer .polarsteps-footer{font-size:.75rem}body{padding-bottom:76px}}
+
+/* WhatsApp-Kontakt ohne Telefonnummer im Link. */
+.footer-social-links{display:flex;align-items:center;gap:24px}
+.site-footer .whatsapp-footer{white-space:nowrap;text-decoration:none;font-size:.85rem;font-weight:750}
+.site-footer .whatsapp-footer:hover{text-decoration:underline}
+.prose .youtube-links{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:720px){.footer-social-links{gap:12px}.site-footer .whatsapp-footer{font-size:.75rem}.site-footer .wrap{gap:8px}}
