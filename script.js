@@ -15,7 +15,14 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
     a.append(img,document.createTextNode(text));
     return a;
   };
-  document.querySelector('.site-header .nav-wrap')?.append(makeLink('polarsteps-header','Polarsteps','Meine Reisen auf Polarsteps'));
+  const headerWrap=document.querySelector('.site-header .nav-wrap');
+  if(headerWrap){
+    headerWrap.append(makeLink('polarsteps-header','Polarsteps','Meine Reisen auf Polarsteps'));
+    const whatsapp=document.createElement('a');whatsapp.className='whatsapp-header';
+    whatsapp.href='https://wa.me/WhatsThomasRehApp';whatsapp.target='_blank';whatsapp.rel='noopener';
+    whatsapp.textContent='WhatsApp';whatsapp.setAttribute('aria-label','Thomas über WhatsApp kontaktieren');
+    headerWrap.append(whatsapp);
+  }
   const footerWrap=document.querySelector('.site-footer .wrap');
   if(footerWrap){
     const links=document.createElement('div');links.className='footer-social-links';
