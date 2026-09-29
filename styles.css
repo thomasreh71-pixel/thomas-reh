@@ -281,3 +281,7 @@ body{padding-bottom:64px}
  .site-header .whatsapp-header::before{content:"WA";font-size:.65rem;font-weight:850}
  .menu-toggle{padding:6px 8px}
 }
+
+/* Polarsteps und WhatsApp als gemeinsame Gruppe rechts im Kopf. */
+.header-social-links{display:flex;align-items:center;gap:18px;margin-left:auto}
+@media(max-width:720px){.header-social-links{gap:8px}.site-header .polarsteps-header{margin-left:0}}
