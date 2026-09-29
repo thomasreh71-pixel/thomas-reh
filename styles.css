@@ -268,3 +268,16 @@ body{padding-bottom:64px}
 .site-footer .whatsapp-footer:hover{text-decoration:underline}
 .prose .youtube-links{display:flex;flex-wrap:wrap;gap:12px}
 @media(max-width:720px){.footer-social-links{gap:12px}.site-footer .whatsapp-footer{font-size:.75rem}.site-footer .wrap{gap:8px}}
+
+/* WhatsApp direkt neben Polarsteps in der Kopfzeile. */
+.site-header .whatsapp-header{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;text-decoration:none;font-weight:750;font-size:.86rem;white-space:nowrap}
+.site-header .whatsapp-header:hover{text-decoration:underline}
+@media(max-width:720px){
+ .site-header .brand span{display:none}
+ .site-header .brand strong{font-size:.95rem}
+ .nav-wrap{gap:8px}
+ .site-header .polarsteps-header{margin-left:auto}
+ .site-header .whatsapp-header{font-size:0;width:28px;height:28px;border:1.5px solid #fff;border-radius:50%}
+ .site-header .whatsapp-header::before{content:"WA";font-size:.65rem;font-weight:850}
+ .menu-toggle{padding:6px 8px}
+}
