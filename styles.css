@@ -239,3 +239,6 @@ h1 span,.eyebrow,.story-link,.back-link,.project span,.video-label,.video-cta{co
   background-size:cover!important;
   background-position:center!important;
 }
+
+/* Schreibweise FaWoWa in Bildbeschriftungen erhalten. */
+.keep-case{text-transform:none!important}
