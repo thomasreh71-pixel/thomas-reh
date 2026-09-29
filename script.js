@@ -16,7 +16,22 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
     return a;
   };
   document.querySelector('.site-header .nav-wrap')?.append(makeLink('polarsteps-header','Polarsteps','Meine Reisen auf Polarsteps'));
-  document.querySelector('.site-footer .wrap')?.append(makeLink('polarsteps-footer','Polarsteps'));
+  const footerWrap=document.querySelector('.site-footer .wrap');
+  if(footerWrap){
+    const links=document.createElement('div');links.className='footer-social-links';
+    links.append(makeLink('polarsteps-footer','Polarsteps'));
+    const whatsapp=document.createElement('a');whatsapp.className='whatsapp-footer';
+    whatsapp.href='https://wa.me/WhatsThomasRehApp';whatsapp.target='_blank';whatsapp.rel='noopener';
+    whatsapp.textContent='WhatsApp';whatsapp.setAttribute('aria-label','Thomas über WhatsApp kontaktieren');
+    links.append(whatsapp);footerWrap.append(links);
+  }
+  const aboutActions=document.querySelector('.prose .youtube-links');
+  if(aboutActions){
+    const whatsapp=document.createElement('a');whatsapp.className='btn btn-secondary whatsapp-about';
+    whatsapp.href='https://wa.me/WhatsThomasRehApp';whatsapp.target='_blank';whatsapp.rel='noopener';
+    whatsapp.textContent='Schreib mir auf WhatsApp →';
+    aboutActions.append(whatsapp);
+  }
   const aboutLink=document.querySelector('.prose a[href="'+url+'"]');
   if(aboutLink){const img=document.createElement('img');img.src=icon;img.alt='';img.setAttribute('aria-hidden','true');aboutLink.prepend(img);}
   const ico=document.createElement('link');ico.rel='icon';ico.type='image/x-icon';ico.href='favicon.ico?v=6';document.head.append(ico);
