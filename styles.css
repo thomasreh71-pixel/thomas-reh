@@ -285,3 +285,6 @@ body{padding-bottom:64px}
 /* Polarsteps und WhatsApp als gemeinsame Gruppe rechts im Kopf. */
 .header-social-links{display:flex;align-items:center;gap:18px;margin-left:auto}
 @media(max-width:720px){.header-social-links{gap:8px}.site-header .polarsteps-header{margin-left:0}}
+
+/* Impressum: sehr kleine Hauptüberschrift in der PC-Ansicht. */
+@media(min-width:951px){.detail-hero .detail-text > h1{font-size:1.35rem!important;line-height:1.2!important;letter-spacing:0!important;margin-bottom:14px}}
