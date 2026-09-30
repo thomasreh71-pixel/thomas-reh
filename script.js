@@ -54,7 +54,7 @@ if(latestVideoTile){
     event.preventDefault();
     if(latestVideoTile.querySelector('iframe'))return;
     const player=document.createElement('iframe');
-    player.src='https://www.youtube.com/embed/'+encodeURIComponent(latestVideoTile.dataset.videoId)+'?autoplay=1&playsinline=1&rel=0';
+    player.src='https://www.youtube.com/embed/'+encodeURIComponent(latestVideoTile.dataset.videoId)+'?autoplay=1&mute=1&playsinline=1&rel=0';
     player.title=latestVideoTile.getAttribute('aria-label')||'Neuestes Video';
     player.allow='autoplay; encrypted-media; picture-in-picture; web-share';
     player.allowFullscreen=true;
