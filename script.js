@@ -45,3 +45,25 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
   const ico=document.createElement('link');ico.rel='icon';ico.type='image/x-icon';ico.href='favicon.ico?v=6';document.head.append(ico);
   const apple=document.createElement('link');apple.rel='apple-touch-icon';apple.href='apple-touch-icon.png?v=6';document.head.append(apple);
 })();
+
+/* Das neueste Video startet beim Klick direkt in der oberen Kachel. */
+const latestVideoTile=document.querySelector('.hero-shot[data-video-id]');
+if(latestVideoTile){
+  latestVideoTile.addEventListener('click',event=>{
+    if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    if(latestVideoTile.querySelector('iframe'))return;
+    const player=document.createElement('iframe');
+    player.src='https://www.youtube.com/embed/'+encodeURIComponent(latestVideoTile.dataset.videoId)+'?autoplay=1&playsinline=1&rel=0';
+    player.title=latestVideoTile.getAttribute('aria-label')||'Neuestes Video';
+    player.allow='autoplay; encrypted-media; picture-in-picture; web-share';
+    player.allowFullscreen=true;
+    player.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;';
+    const container=document.createElement('div');
+    container.className=latestVideoTile.className;
+    container.style.cssText=latestVideoTile.style.cssText;
+    container.setAttribute('aria-label',player.title);
+    container.append(player);
+    latestVideoTile.replaceWith(container);
+  });
+}
