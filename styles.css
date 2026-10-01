@@ -288,3 +288,17 @@ body{padding-bottom:64px}
 
 /* Impressum: alle Überschriften in der PC-Ansicht kompakt. */
 @media(min-width:951px){.detail-hero .detail-text > h1,.detail-hero .detail-text > h2,.detail-hero .detail-text > h3{font-size:1.35rem!important;line-height:1.2!important;letter-spacing:0!important;margin-bottom:14px}}
+
+/* Anthrazit mit helleren Inhaltsflächen auf allen Seiten. */
+body{background:#111411}
+.hero,.intro,.projects,.closing,.detail-hero,.detail-section{background:#111411}
+.stories,.video-section,.detail-section.alt{background:#151A15}
+.story-card,.media-card,.project,.visited-countries{background:#1B201B}
+.visited-countries li{background:#222822}
+.hero-copy .lead,.prose p,.section-head>p,.story-body p,.project p,.closing-box p,.visited-countries p,.detail-copy p,.detail-text p,.media-card p{color:#C3CBC0}
+/* Stumme Videovorschau unter der Maus. */
+.video-preview-media{position:relative;aspect-ratio:16/9;overflow:hidden;padding:0!important}
+.video-preview-media img{width:100%;height:100%;object-fit:cover}
+.video-preview-media iframe,.video-hover-tile iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;z-index:3}
+.video-hover-tile>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video-hover-tile span{z-index:4}
