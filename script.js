@@ -46,24 +46,33 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
   const apple=document.createElement('link');apple.rel='apple-touch-icon';apple.href='apple-touch-icon.png?v=6';document.head.append(apple);
 })();
 
-/* Das neueste Video startet beim Klick direkt in der oberen Kachel. */
-const latestVideoTile=document.querySelector('.hero-shot[data-video-id]');
-if(latestVideoTile){
-  latestVideoTile.addEventListener('click',event=>{
-    if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-    event.preventDefault();
-    if(latestVideoTile.querySelector('iframe'))return;
-    const player=document.createElement('iframe');
-    player.src='https://www.youtube.com/embed/'+encodeURIComponent(latestVideoTile.dataset.videoId)+'?autoplay=1&mute=1&playsinline=1&rel=0';
-    player.title=latestVideoTile.getAttribute('aria-label')||'Neuestes Video';
-    player.allow='autoplay; encrypted-media; picture-in-picture; web-share';
-    player.allowFullscreen=true;
-    player.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;';
-    const container=document.createElement('div');
-    container.className=latestVideoTile.className;
-    container.style.cssText=latestVideoTile.style.cssText;
-    container.setAttribute('aria-label',player.title);
-    container.append(player);
-    latestVideoTile.replaceWith(container);
+
+/* Nur die Kachel unter der Maus spielt; beim Verlassen wird der Player entfernt. */
+(() => {
+  if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+  let stopCurrent=null;
+  document.querySelectorAll('a.video-card, a.video-hover-tile, a.detail-image-link').forEach(card=>{
+    let url;try{url=new URL(card.href);}catch{return;}
+    const id=url.hostname==='youtu.be'?url.pathname.slice(1):url.hostname.endsWith('youtube.com')?url.searchParams.get('v'):null;
+    if(!id||! /^[A-Za-z0-9_-]{11}$/.test(id))return;
+    const img=card.querySelector('img');
+    let area=card;
+    if(img&&!card.classList.contains('video-hover-tile')){
+      area=document.createElement('div');area.className='video-preview-media';
+      img.replaceWith(area);area.append(img);
+    }
+    let player=null;
+    const stop=()=>{if(player){player.remove();player=null;}if(stopCurrent===stop)stopCurrent=null;};
+    card.addEventListener('mouseenter',()=>{
+      if(stopCurrent)stopCurrent();
+      player=document.createElement('iframe');
+      player.src='https://www.youtube.com/embed/'+encodeURIComponent(id)+'?autoplay=1&mute=1&playsinline=1&controls=0&rel=0';
+      player.title='Stumme Videovorschau';
+      player.allow='autoplay; encrypted-media';
+      player.setAttribute('sandbox','allow-scripts allow-same-origin');
+      area.append(player);stopCurrent=stop;
+    });
+    card.addEventListener('mouseleave',stop);
   });
-}
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&stopCurrent)stopCurrent();});
+})();
