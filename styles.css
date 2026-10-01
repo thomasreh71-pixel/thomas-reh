@@ -302,3 +302,11 @@ body{background:#111411}
 .video-preview-media iframe,.video-hover-tile iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;z-index:3}
 .video-hover-tile>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .video-hover-tile span{z-index:4}
+
+/* Startseite: breites Video oben, zwei gleich große Themenkacheln darunter. */
+.hero-media{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto 210px;min-height:0}
+.hero-media .hero-latest-video{grid-column:1 / -1;grid-row:1;aspect-ratio:16/9}
+.hero-media .shot-main{grid-column:1;grid-row:2}
+.hero-media .shot-small-b{grid-column:2;grid-row:2}
+.detail-image-link>iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;z-index:3}
+@media(max-width:720px){.hero-media{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto 160px}.hero-shot span{left:12px;bottom:12px;font-size:.7rem}}
