@@ -76,3 +76,20 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
   });
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&stopCurrent)stopCurrent();});
 })();
+
+/* Das breite Hauptvideo startet stumm und ohne eingeblendete Untertitel. */
+(() => {
+  if(!document.getElementById('hero-latest-player'))return;
+  const hideCaptions=player=>{
+    if(typeof player.unloadModule==='function')player.unloadModule('captions');
+    else if(typeof player.setOption==='function')player.setOption('captions','track',{});
+  };
+  const init=()=>new YT.Player('hero-latest-player',{events:{
+    onReady:event=>{event.target.mute();hideCaptions(event.target);event.target.playVideo();},
+    onApiChange:event=>hideCaptions(event.target)
+  }});
+  if(window.YT&&window.YT.Player){init();return;}
+  const previous=window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady=()=>{if(previous)previous();init();};
+  const api=document.createElement('script');api.src='https://www.youtube.com/iframe_api';api.async=true;document.head.append(api);
+})();
