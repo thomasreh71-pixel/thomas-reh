@@ -81,12 +81,13 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
 (() => {
   if(!document.getElementById('hero-latest-player'))return;
   const hideCaptions=player=>{
+    if(typeof player.setOption==='function')player.setOption('captions','track',{});
     if(typeof player.unloadModule==='function')player.unloadModule('captions');
-    else if(typeof player.setOption==='function')player.setOption('captions','track',{});
   };
   const init=()=>new YT.Player('hero-latest-player',{events:{
     onReady:event=>{event.target.mute();hideCaptions(event.target);event.target.playVideo();},
-    onApiChange:event=>hideCaptions(event.target)
+    onApiChange:event=>hideCaptions(event.target),
+    onStateChange:event=>{if(event.data===1){hideCaptions(event.target);setTimeout(()=>hideCaptions(event.target),1000);}}
   }});
   if(window.YT&&window.YT.Player){init();return;}
   const previous=window.onYouTubeIframeAPIReady;
