@@ -51,6 +51,20 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
 (() => {
   if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches)return;
   let stopCurrent=null;
+  let soundEnabled=false;
+  const grid=document.querySelector('.media-grid');
+  if(grid){
+    const controls=document.createElement('div');controls.className='youtube-links video-preview-controls';
+    const sound=document.createElement('button');sound.type='button';sound.className='btn btn-secondary';
+    sound.textContent='Vorschau-Ton einschalten';sound.setAttribute('aria-pressed','false');
+    sound.addEventListener('click',()=>{
+      soundEnabled=!soundEnabled;
+      sound.textContent=soundEnabled?'Vorschau-Ton ausschalten':'Vorschau-Ton einschalten';
+      sound.setAttribute('aria-pressed',String(soundEnabled));
+      if(stopCurrent)stopCurrent();
+    });
+    controls.append(sound);grid.before(controls);
+  }
   document.querySelectorAll('a.video-card, a.video-hover-tile, a.detail-image-link').forEach(card=>{
     let url;try{url=new URL(card.href);}catch{return;}
     const id=url.hostname==='youtu.be'?url.pathname.slice(1):url.hostname.endsWith('youtube.com')?url.searchParams.get('v'):null;
@@ -66,8 +80,9 @@ const autoVideo=document.querySelector('.video-frame iframe[data-src]');if(autoV
     card.addEventListener('mouseenter',()=>{
       if(stopCurrent)stopCurrent();
       player=document.createElement('iframe');
-      player.src='https://www.youtube.com/embed/'+encodeURIComponent(id)+'?autoplay=1&mute=1&playsinline=1&controls=0&rel=0';
-      player.title='Stumme Videovorschau';
+      player.src='https://www.youtube.com/embed/'+encodeURIComponent(id)+'?autoplay=1&mute='+(soundEnabled?'0':'1')+'&playsinline=1&controls=0&rel=0&origin='+encodeURIComponent(location.origin);
+      player.title=soundEnabled?'Videovorschau mit Ton':'Stumme Videovorschau';
+      player.referrerPolicy='strict-origin-when-cross-origin';
       player.allow='autoplay; encrypted-media';
       player.setAttribute('sandbox','allow-scripts allow-same-origin');
       area.append(player);stopCurrent=stop;
