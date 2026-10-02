@@ -1,0 +1,52 @@
+name: YouTube hero and GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test video selection and preserve layout
+        run: python3 -m unittest discover -s tests -v
+      - name: Assemble existing static website
+        run: |
+          mkdir _site
+          git archive HEAD | tar -xf - -C _site
+          rm -rf _site/.github _site/scripts _site/tests
+      - name: Select current public YouTube video
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python3 scripts/update_hero.py _site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish updated website
+        id: deployment
+        uses: actions/deploy-pages@v4

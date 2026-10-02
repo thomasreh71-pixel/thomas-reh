@@ -316,3 +316,10 @@ body,.hero,.intro,.projects,.closing,.detail-hero,.detail-section{background:#20
 .stories,.video-section,.detail-section.alt{background:#252B25}
 .story-card,.media-card,.project,.visited-countries{background:#303730}
 .visited-countries li{background:#353D35}
+
+/* Zurückhaltender Hinweis oberhalb des Hauptvideos, ohne Platz im Videobild. */
+.hero-media{position:relative}
+.current-video-badge{position:absolute;top:-29px;left:0;display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border:1px solid rgba(195,203,192,.25);border-radius:999px;color:#C3CBC0;background:#202420;font-size:.68rem;line-height:1.6;pointer-events:none}
+.current-video-badge::before{content:"";width:5px;height:5px;border-radius:50%;background:#239B11}
+@media(min-width:721px) and (prefers-reduced-motion:no-preference){.current-video-badge::before{animation:current-video-pulse 4s ease-in-out infinite}}
+@keyframes current-video-pulse{0%,100%{opacity:.55}50%{opacity:1}}
