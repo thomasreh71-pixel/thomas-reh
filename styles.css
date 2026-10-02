@@ -327,3 +327,8 @@ body,.hero,.intro,.projects,.closing,.detail-hero,.detail-section{background:#20
 @media(min-width:721px) and (prefers-reduced-motion:no-preference){.current-video-arrow{animation:current-video-arrow-bob 3s ease-in-out infinite}}
 @media(max-width:720px){.hero-media{grid-template-rows:auto auto 160px}.current-video-label{font-size:.9rem;letter-spacing:.045em}.current-video-arrow{width:34px;height:45px}}
 @keyframes current-video-arrow-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* Startseite: Hinweis dicht unter der Kopfzeile, ohne ungenutzten oberen Raum. */
+.hero{padding-top:8px}
+.hero-grid{align-items:start}
+@media(max-width:950px){.hero-grid{row-gap:20px}}
