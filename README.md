@@ -33,5 +33,6 @@ des YouTube-Players. Weitere Wechsel erscheinen nach dem nächsten erfolgreichen
 Workflow und Neuladen der Seite.
 
 Tests: `python3 -m unittest discover -s tests -v`.
-Das grüne Badge „▶️ NEUESTES VIDEO“ über dem Hauptvideo pulsiert auf größeren
-Bildschirmen sanft; mobil und bei reduzierter Bewegung bleibt es unbewegt.
+Der grüne Hinweis „AKTUELL AUF YOUTUBE“ mit Pfeil nach unten zeigt auf das
+Hauptvideo. Er ist kein Link oder Button und hat keine Hover-Effekte. Auf Desktop
+pulsiert er sanft; mobil und bei reduzierter Bewegung bleibt er unbewegt.
