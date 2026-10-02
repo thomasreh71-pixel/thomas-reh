@@ -33,6 +33,7 @@ des YouTube-Players. Weitere Wechsel erscheinen nach dem nächsten erfolgreichen
 Workflow und Neuladen der Seite.
 
 Tests: `python3 -m unittest discover -s tests -v`.
-Der grüne Hinweis „AKTUELL AUF YOUTUBE“ mit Pfeil nach unten zeigt auf das
-Hauptvideo. Er ist kein Link oder Button und hat keine Hover-Effekte. Auf Desktop
-pulsiert er sanft; mobil und bei reduzierter Bewegung bleibt er unbewegt.
+Der Hinweis „AKTUELL AUF YOUTUBE“ besteht aus freiem grünem Text und einem
+großen, kräftigen Pfeil darunter, zentriert über dem Hauptvideo. Nur der Pfeil
+wippt auf Desktop leicht. Text, mobile Ansicht und reduzierte Bewegung bleiben
+statisch. Der Hinweis ist weder Link noch Button und hat keine Hover-Effekte.

@@ -317,10 +317,13 @@ body,.hero,.intro,.projects,.closing,.detail-hero,.detail-section{background:#20
 .story-card,.media-card,.project,.visited-countries{background:#303730}
 .visited-countries li{background:#353D35}
 
-/* Grüner Hinweis mit Pfeil zum Video; keine Button-Form oder Interaktion. */
-.hero-media{position:relative}
-.current-video-badge{position:absolute;top:-54px;left:0;display:inline-block;padding:6px 12px;border:0;border-radius:2px;color:#071006;background:#239B11;font-size:.86rem;font-weight:850;letter-spacing:.035em;line-height:1.5;white-space:nowrap;cursor:default;pointer-events:none}
-.current-video-arrow{position:absolute;left:12px;bottom:-21px;color:#239B11;font-size:1.6rem;font-weight:900;line-height:1}
-@media(min-width:721px) and (prefers-reduced-motion:no-preference){.current-video-badge{animation:current-video-pulse 4s ease-in-out infinite}}
-@media(max-width:720px){.current-video-badge{font-size:.8rem;padding:6px 10px}.current-video-arrow{left:10px}}
-@keyframes current-video-pulse{0%,100%{opacity:.85}50%{opacity:1}}
+/* Eindeutiger Hinweis: freier Text und kräftiger Pfeil unterhalb. */
+.hero-media{grid-template-rows:auto auto 210px}
+.current-video-notice{grid-column:1 / -1;grid-row:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 0 7px;pointer-events:none;cursor:default}
+.current-video-label{color:#239B11;font-size:1rem;font-weight:900;letter-spacing:.07em;line-height:1.3;text-align:center}
+.current-video-arrow{display:block;width:38px;height:50px;fill:#239B11}
+.hero-media .hero-latest-video{grid-row:2}
+.hero-media .shot-main,.hero-media .shot-small-b{grid-row:3}
+@media(min-width:721px) and (prefers-reduced-motion:no-preference){.current-video-arrow{animation:current-video-arrow-bob 3s ease-in-out infinite}}
+@media(max-width:720px){.hero-media{grid-template-rows:auto auto 160px}.current-video-label{font-size:.9rem;letter-spacing:.045em}.current-video-arrow{width:34px;height:45px}}
+@keyframes current-video-arrow-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
