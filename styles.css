@@ -317,9 +317,9 @@ body,.hero,.intro,.projects,.closing,.detail-hero,.detail-section{background:#20
 .story-card,.media-card,.project,.visited-countries{background:#303730}
 .visited-countries li{background:#353D35}
 
-/* Zurückhaltender Hinweis oberhalb des Hauptvideos, ohne Platz im Videobild. */
+/* Klar lesbares grünes Badge oberhalb des Hauptvideos. */
 .hero-media{position:relative}
-.current-video-badge{position:absolute;top:-29px;left:0;display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border:1px solid rgba(195,203,192,.25);border-radius:999px;color:#C3CBC0;background:#202420;font-size:.68rem;line-height:1.6;pointer-events:none}
-.current-video-badge::before{content:"";width:5px;height:5px;border-radius:50%;background:#239B11}
-@media(min-width:721px) and (prefers-reduced-motion:no-preference){.current-video-badge::before{animation:current-video-pulse 4s ease-in-out infinite}}
-@keyframes current-video-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+.current-video-badge{position:absolute;top:-42px;left:0;display:inline-flex;align-items:center;padding:5px 14px;border:1px solid #239B11;border-radius:999px;color:#071006;background:#239B11;font-size:.86rem;font-weight:850;letter-spacing:.035em;line-height:1.5;white-space:nowrap;pointer-events:none}
+@media(min-width:721px) and (prefers-reduced-motion:no-preference){.current-video-badge{animation:current-video-pulse 4s ease-in-out infinite}}
+@media(max-width:720px){.current-video-badge{font-size:.8rem;padding:5px 12px}}
+@keyframes current-video-pulse{0%,100%{box-shadow:0 0 0 0 rgba(35,155,17,0)}50%{box-shadow:0 0 0 4px rgba(35,155,17,.16)}}

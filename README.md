@@ -33,5 +33,5 @@ des YouTube-Players. Weitere Wechsel erscheinen nach dem nächsten erfolgreichen
 Workflow und Neuladen der Seite.
 
 Tests: `python3 -m unittest discover -s tests -v`.
-Das dezente Badge über dem Hauptvideo animiert nur seinen Punkt auf größeren
-Bildschirmen; mobil und bei reduzierter Bewegung bleibt es unbewegt.
+Das grüne Badge „▶️ NEUESTES VIDEO“ über dem Hauptvideo pulsiert auf größeren
+Bildschirmen sanft; mobil und bei reduzierter Bewegung bleibt es unbewegt.
