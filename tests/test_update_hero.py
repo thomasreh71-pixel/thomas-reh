@@ -40,9 +40,11 @@ class HeroTests(unittest.TestCase):
     def test_exact_layout_and_player_options_preserved(self):
         source = Path("index.html").read_text()
         updated = update_html(source, video(), "upcoming")
-        # Only two labels and the hero ID may change, including HTML escaping.
+        # Only video IDs and associated labels may change, including HTML escaping.
         expected = source.replace("/embed/ac0qW1LdM8Q?", "/embed/abcdefghijk?").replace(
             "Neuestes Video: Neuer Controller", "Geplanter Livestream: Titel &amp; &quot;Test&quot;")
+        expected = expected.replace("/embed/i9wItnbXH6Y?", "/embed/abcdefghijk?").replace(
+            "Kreher Imperial 2.0 – neuestes Video", "Geplanter Livestream: Titel &amp; &quot;Test&quot;")
         self.assertEqual(updated, expected)
         self.assertIn("mute=1", updated)
         self.assertIn("enablejsapi=1", updated)

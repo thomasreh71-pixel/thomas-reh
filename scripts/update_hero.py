@@ -109,6 +109,14 @@ def update_html(source, video, kind):
     source, count = re.subn(pattern, lambda m: m[1] + title + m[2], source)
     if count != 1:
         raise RuntimeError("Unexpected hero container; deployment cancelled.")
+    # Keep the secondary, lazily loaded player on the same current selection.
+    secondary = list(re.finditer(r'<iframe\b[^>]*\bdata-src="https://www\.youtube\.com/embed/[^"]*"[^>]*>', source))
+    if len(secondary) != 1:
+        raise RuntimeError("Expected exactly one secondary YouTube player.")
+    secondary_tag = re.sub(r'(data-src="https://www\.youtube\.com/embed/)[A-Za-z0-9_-]{11}(\?)',
+                           lambda m: m[1] + video["id"] + m[2], secondary[0].group())
+    secondary_tag = re.sub(r'\btitle="[^"]*"', lambda _: 'title="' + title + '"', secondary_tag)
+    source = source[:secondary[0].start()] + secondary_tag + source[secondary[0].end():]
     return source
 
 

@@ -332,3 +332,6 @@ body,.hero,.intro,.projects,.closing,.detail-hero,.detail-section{background:#20
 .hero{padding-top:8px}
 .hero-grid{align-items:start}
 @media(max-width:950px){.hero-grid{row-gap:20px}}
+
+/* Handy: aktueller YouTube-Player direkt unter der Kopfzeile. */
+@media(max-width:720px){.hero-media{grid-row:1}.hero-copy{grid-row:2}}
